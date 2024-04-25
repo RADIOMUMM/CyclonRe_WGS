@@ -23,6 +23,8 @@ conda env create -f CyclonRe-WGS_environment.yml
 
 !! requirement
 
+''software'' | ''version'' | ''link'' 
+
 | ''software'' | ''version'' | ''link'' |
 
 |NanoStat |1.6.0 |https://github.com/wdecoster/nanostat |
