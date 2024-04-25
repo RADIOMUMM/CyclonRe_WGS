@@ -6,9 +6,6 @@
 CyclonRe-WGS software is dedicated to MGI-cyclone/ONT triple sequencing technology, the software analyzes human sequencing data. Functions include data quality control, mapping, small variant detection, structural variant detection, and variant evaluation.
 
 
-
-软件流程图
-
 <div align=center><img src="https://pic.imgdb.cn/item/662a2a6b0ea9cb14037ebad5.jpg" alt="图片alt" title="图2"></div>
 
 ---
@@ -61,16 +58,42 @@ conda env create -f CyclonRe-WGS_environment.yml
         <td>1.7</td> 
         <td>https://github.com/samtools/samtools</td> 
     </tr>
+    <tr>
+        <td>clair3</td> 
+        <td>1.5</td> 
+        <td>https://github.com/HKU-BAL/Clair3</td> 
+    </tr>
+    <tr>
+        <td>pigz</td> 
+        <td>2.7</td> 
+        <td>https://github.com/madler/pigz</td> 
+    </tr>
+    <tr>
+        <td>bcftools</td> 
+        <td>1.5</td> 
+        <td>https://github.com/samtools/bcftools</td> 
+    </tr>
+    <tr>
+        <td>tabix</td> 
+        <td>0.2.6</td> 
+        <td>https://github.com/samtools/tabix</td> 
+    </tr>
+    <tr>
+        <td>truvari</td> 
+        <td>1.5</td> 
+        <td>https://github.com/ACEnglish/truvari</td> 
+    </tr>
+    <tr>
+        <td>gatk</td> 
+        <td>4.2</td> 
+        <td>https://github.com/RealTimeGenomics/rtg-tools</td> 
+    </tr>
+    <tr>
+        <td>rtg-tools</td> 
+        <td>3.11</td> 
+        <td>https://github.com/RealTimeGenomics/rtg-tools</td> 
+    </tr>
 </table>
-
-
-|clair3 |1.5 |https://github.com/HKU-BAL/Clair3 |
-|pigz |2.7 |https://github.com/madler/pigz |
-|bcftools |1.5 |https://github.com/samtools/bcftools |
-|tabix |0.2.6 |https://github.com/samtools/tabix |
-|truvari |1.5 |https://github.com/ACEnglish/truvari |
-|gatk |4.2 |https://github.com/RealTimeGenomics/rtg-tools |
-|rtg-tools |3.11 |https://github.com/RealTimeGenomics/rtg-tools |
 
 ---
 ! Performance
