@@ -24,10 +24,15 @@ conda env create -f CyclonRe-WGS_environment.yml
 !! requirement
 
 | ''software'' | ''version'' | ''link'' |
+
 |NanoStat |1.6.0 |https://github.com/wdecoster/nanostat |
+
 |NanoFilt |2.8.0 |https://github.com/wdecoster/nanofilt |
+
 |NanoPlot |1.42.0 |https://github.com/wdecoster/NanoPlot |
+
 |Sniffles2 |2.2 |https://github.com/fritzsedlazeck/Sniffles |
+
 |minimap2 |2.17 |https://github.com/lh3/minimap2 |
 |samtools |1.7 |https://github.com/samtools/samtools |
 |clair3 |1.5 |https://github.com/HKU-BAL/Clair3 |
