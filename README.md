@@ -24,35 +24,43 @@ conda env create -f CyclonRe-WGS_environment.yml
 !! requirement
 <table>
     <tr>
-        <td>行1列1</td> 
-        <td>行1列2</td> 
-        <td>行1列3</td> 
+        <td>software</td> 
+        <td>version</td> 
+        <td>link</td> 
    </tr>
     <tr>
-  		<td>行2列1</td> 
-        <td>行2列2</td> 
-        <td>行2列3</td> 
+  		<td>NanoStat</td> 
+        <td>1.6.0</td> 
+        <td>https://github.com/wdecoster/nanostat</td> 
     </tr>
     <tr>
-        <td>行3列1</td> 
-        <td>行3列2</td> 
-        <td>行3列3</td> 
+        <td>NanoFilt</td> 
+        <td>2.8.0</td> 
+        <td>https://github.com/wdecoster/nanofilt</td> 
+    </tr>
+    <tr>
+        <td>NanoPlot</td> 
+        <td>1.42.0</td> 
+        <td>https://github.com/wdecoster/NanoPlot</td> 
+    </tr>
+    <tr>
+        <td>Sniffles2</td> 
+        <td>2.2</td> 
+        <td>https://github.com/fritzsedlazeck/Sniffles</td> 
+    </tr>
+    <tr>
+        <td>minimap2</td> 
+        <td>2.17</td> 
+        <td>https://github.com/lh3/minimap2</td> 
+    </tr>
+    <tr>
+        <td>samtools</td> 
+        <td>1.7</td> 
+        <td>https://github.com/samtools/samtools</td> 
     </tr>
 </table>
-''software'' | ''version'' | ''link'' 
 
-| ''software'' | ''version'' | ''link'' |
 
-|NanoStat |1.6.0 |https://github.com/wdecoster/nanostat |
-
-|NanoFilt |2.8.0 |https://github.com/wdecoster/nanofilt |
-
-|NanoPlot |1.42.0 |https://github.com/wdecoster/NanoPlot |
-
-|Sniffles2 |2.2 |https://github.com/fritzsedlazeck/Sniffles |
-
-|minimap2 |2.17 |https://github.com/lh3/minimap2 |
-|samtools |1.7 |https://github.com/samtools/samtools |
 |clair3 |1.5 |https://github.com/HKU-BAL/Clair3 |
 |pigz |2.7 |https://github.com/madler/pigz |
 |bcftools |1.5 |https://github.com/samtools/bcftools |
