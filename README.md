@@ -1,9 +1,5 @@
 # CyclonRe_WGS
-CyclonRe-WGS software is dedicated to MGI-cyclone/ONT triple sequencing technology, the software analyzes human-sequencing data. Functions include data quality control, mapping, small variant calling, structural variant calling, and variant evaluation.
 ! Introduction
-
-CyclonRe-WGS软件是专用于MGI-cyclone/ONT三代测序技术的分析软件，软件对人的重测序数据进行分析。功能包括数据质控、比对、小变异检测、结构变异检测、变异评估等。
-
 CyclonRe-WGS software is dedicated to MGI-cyclone/ONT triple sequencing technology, the software analyzes human sequencing data. Functions include data quality control, mapping, small variant detection, structural variant detection, and variant evaluation.
 
 
@@ -12,11 +8,8 @@ CyclonRe-WGS software is dedicated to MGI-cyclone/ONT triple sequencing technolo
 
 <div align=center><img src="https://pic.imgdb.cn/item/660bdcb69f345e8d039464a8.png" alt="图片alt" title="图2"></div>
 
-
 ---
 ! Getting Started
-
-
 
 ---
 
@@ -44,7 +37,6 @@ conda env create -f CyclonRe-WGS_environment.yml
 |truvari |1.5 |https://github.com/ACEnglish/truvari |
 |gatk |4.2 |https://github.com/RealTimeGenomics/rtg-tools |
 |rtg-tools |3.11 |https://github.com/RealTimeGenomics/rtg-tools |
-
 
 ---
 ! Performance
