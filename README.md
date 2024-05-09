@@ -99,7 +99,7 @@ conda env create -f CyclonRe-WGS_environment.yml
 <h3>Small variant evaluation</h3>
 
 软件对Cyclone下机的HG002数据进行变异检测，将小变异（SNP/InDel）与giab数据库 (https://ftp-trace.ncbi.nlm.nih.gov/ReferenceSamples/giab/) 中的baseline进行比对，得到SNP/InDel评估值。
-
+<h4>SNPs evaluation</h4>
 <table>
     <tr>
         <td>coverage</td> 
@@ -131,9 +131,36 @@ conda env create -f CyclonRe-WGS_environment.yml
    </tr>
 </table>
 
+<h4>InDel evaluation</h4>
+<table>
+    <tr>
+        <td>coverage</td> 
+        <td>InDel number</td> 
+        <td>Precision</td> 
+        <td>Sensitivity</td>
+        <td>F-measure</td>
+   </tr>
+   </tr>
+    <tr>
+        <td>10X</td> 
+        <td>710718</td> 
+        <td>0.7175</td> 
+        <td>0.3746</td>
+        <td>0.4922</td>
+   </tr>
+    <tr>
+        <td>15X</td> 
+        <td>841515</td> 
+        <td>0.6596</td> 
+        <td>0.4147</td>
+        <td>0.5092</td>
+   </tr>
+    <tr>
+        <td>30X</td> 
+        <td>909464</td> 
+        <td>0.6844</td> 
+        <td>0.5005</td>
+        <td>0.5782</td>
+   </tr>
+</table>
 
-| ''InDel'' |
-| ''coverage'' | ''SNP number'' | ''Precision'' | ''Sensitivity'' | ''F-measure'' |
-| 10X | 710718 | ''<font color="Salmon">0.7175</font>'' | 0.3746 | 0.4922 |
-| 15X | 841515 | 0.6596 | 0.4147 | 0.5092 |
-| 30X | 909464 | 0.6844 | ''<font color="Salmon">0.5005</font>'' | ''<font color="Salmon">0.5782</font>'' |
