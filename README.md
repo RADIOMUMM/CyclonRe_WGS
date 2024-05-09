@@ -1,15 +1,14 @@
 # CyclonRe_WGS
-<hr>
+
 <h2> Introduction </h2>
 CyclonRe-WGS software is dedicated to MGI-cyclone/ONT triple sequencing technology, the software analyzes human sequencing data. Functions include data quality control, mapping, small variant detection, structural variant detection, and variant evaluation.
 
 
 <div align=center><img src="https://pic.imgdb.cn/item/662a2a6b0ea9cb14037ebad5.jpg" alt="图片alt" title="图2"></div>
-
----
+<hr>
 <h2> Getting Started </h2>
 
----
+
 
 <h2> Installation </h2>
 
