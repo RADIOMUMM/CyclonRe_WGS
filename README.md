@@ -102,18 +102,34 @@ conda env create -f CyclonRe-WGS_environment.yml
 
 <table>
     <tr>
-        <td>software</td> 
-        <td>version</td> 
-        <td>link</td> 
+        <td>coverage</td> 
+        <td>SNP number</td> 
+        <td>Precision</td> 
+        <td>Sensitivity</td>
+        <td>F-measure</td>
+   </tr>
+    <tr>
+        <td>10X</td> 
+        <td>3850830</td> 
+        <td>0.9719</td> 
+        <td>0.9258</td>
+        <td>0.9483</td>
+   </tr>
+    <tr>
+        <td>15X</td> 
+        <td>3923097</td> 
+        <td>0.9761</td> 
+        <td>0.9485</td>
+        <td>0.9621</td>
+   </tr>
+    <tr>
+        <td>30X</td> 
+        <td>4011627</td> 
+        <td>0.9888</td> 
+        <td>0.9807</td>
+        <td>0.9847</td>
    </tr>
 </table>
-
-
-| ''SNP'' |
-| ''coverage'' | ''SNP number'' | ''Precision'' | ''Sensitivity'' | ''F-measure'' |
-| 10X | 3850830 | 0.9719 | 0.9258 | 0.9483 |
-| 15X | 3923097 | 0.9761 | 0.9485 | 0.9621 |
-| 30X | 4011627 | ''<font color="Salmon">0.9888</font>'' | ''<font color="Salmon">0.9807</font>'' | ''<font color="Salmon">0.9847</font>'' |
 
 
 | ''InDel'' |
