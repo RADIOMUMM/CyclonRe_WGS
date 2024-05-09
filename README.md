@@ -138,7 +138,6 @@ conda env create -f CyclonRe-WGS_environment.yml
         <td>Sensitivity</td>
         <td>F-measure</td>
    </tr>
-   </tr>
     <tr>
         <td>10X</td> 
         <td>710718</td> 
@@ -159,6 +158,37 @@ conda env create -f CyclonRe-WGS_environment.yml
         <td>0.6844</td> 
         <td>0.5005</td>
         <td>0.5782</td>
+   </tr>
+</table>
+<h4>SVs evaluation</h4>
+<table>
+    <tr>
+        <td>coverage</td> 
+        <td>SVs number</td> 
+        <td>Precision</td> 
+        <td>recall</td>
+        <td>f1</td>
+   </tr>
+    <tr>
+        <td>10X</td> 
+        <td>35866</td> 
+        <td>0.7114</td> 
+        <td>0.905</td>
+        <td>0.7966</td>
+   </tr>
+    <tr>
+        <td>15X</td> 
+        <td>37366</td> 
+        <td>0.8022</td> 
+        <td>0.9265</td>
+        <td>0.8599</td>
+   </tr>
+    <tr>
+        <td>30X</td> 
+        <td>32681</td> 
+        <td>0.9018</td> 
+        <td>0.9467</td>
+        <td>0.9237</td>
    </tr>
 </table>
 
