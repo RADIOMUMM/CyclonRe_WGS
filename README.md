@@ -1,7 +1,5 @@
 # CyclonRe_WGS
 
----
-
 <h2> Introduction </h2>
 CyclonRe-WGS software is dedicated to MGI-cyclone/ONT triple sequencing technology, the software analyzes human sequencing data. Functions include data quality control, mapping, small variant detection, structural variant detection, and variant evaluation.
 
@@ -101,6 +99,15 @@ conda env create -f CyclonRe-WGS_environment.yml
 !! Small variant evaluation
 
 软件对Cyclone下机的HG002数据进行变异检测，将小变异（SNP/InDel）与giab数据库 (https://ftp-trace.ncbi.nlm.nih.gov/ReferenceSamples/giab/) 中的baseline进行比对，得到SNP/InDel评估值。
+
+<table>
+    <tr>
+        <td>software</td> 
+        <td>version</td> 
+        <td>link</td> 
+   </tr>
+</table>
+
 
 | ''SNP'' |
 | ''coverage'' | ''SNP number'' | ''Precision'' | ''Sensitivity'' | ''F-measure'' |
