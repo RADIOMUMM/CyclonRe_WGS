@@ -7,11 +7,11 @@ CyclonRe-WGS software is dedicated to MGI-cyclone/ONT triple sequencing technolo
 <div align=center><img src="https://pic.imgdb.cn/item/662a2a6b0ea9cb14037ebad5.jpg" alt="图片alt" title="图2"></div>
 
 ---
-! Getting Started
+<h2> Getting Started </h2>
 
 ---
 
-! Installation
+<h2> Installation </h2>
 
 CyclonRe-WGS软件推荐使用conda安装。
 
@@ -19,7 +19,7 @@ CyclonRe-WGS软件推荐使用conda安装。
 conda env create -f CyclonRe-WGS_environment.yml
 ```
 
-!! requirement
+<h3> requirement </h3>
 <table>
     <tr>
         <td>software</td> 
@@ -94,9 +94,9 @@ conda env create -f CyclonRe-WGS_environment.yml
 </table>
 
 ---
-! Performance
+<h2>Performance</h2> 
 
-!! Small variant evaluation
+<h3>Small variant evaluation</h3>
 
 软件对Cyclone下机的HG002数据进行变异检测，将小变异（SNP/InDel）与giab数据库 (https://ftp-trace.ncbi.nlm.nih.gov/ReferenceSamples/giab/) 中的baseline进行比对，得到SNP/InDel评估值。
 
