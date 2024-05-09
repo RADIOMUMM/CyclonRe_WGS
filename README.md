@@ -160,7 +160,8 @@ conda env create -f CyclonRe-WGS_environment.yml
         <td>0.5782</td>
    </tr>
 </table>
-<h4>SVs evaluation</h4>
+
+<h3>SVs evaluation</h3>
 <table>
     <tr>
         <td>coverage</td> 
