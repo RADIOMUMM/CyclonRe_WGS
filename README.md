@@ -83,7 +83,7 @@ conda env create -f CyclonRe-WGS_environment.yml
     <tr>
         <td>gatk</td> 
         <td>4.2</td> 
-        <td>https://github.com/RealTimeGenomics/rtg-tools</td> 
+        <td>https://github.com/broadinstitute/gatk</td> 
     </tr>
     <tr>
         <td>rtg-tools</td> 
