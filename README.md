@@ -1,24 +1,33 @@
 # CyclonRe_WGS
 
-<h2> Introduction </h2>
+## 1 Introduction
+
 CyclonRe-WGS software is dedicated to MGI-cyclone/ONT triple sequencing technology, the software analyzes human sequencing data. Functions include data quality control, mapping, small variant detection, structural variant detection, and variant evaluation.
 
 
-<div align=center><img src="https://pic.imgdb.cn/item/662a2a6b0ea9cb14037ebad5.jpg" alt="图片alt" title="图2"></div>
+## 1.1 Software Workflow
 
-<h2> Getting Started </h2>
+<div align=center><img src="https://pic.imgdb.cn/item/669f5055d9c307b7e9bac487.png" alt="图片alt" title="图2" width="50%"></div>
 
+## 1.2 Hardware/Software requirements
 
+- x86-64 compatible processors.
+- require at least 50GB of RAM and 4 CPU.
+- centos 7.x 64-bit operating system (Linux kernel 3.10.0, compatible with higher software and hardware configuration).
 
-<h2> Installation </h2>
+# 2 Getting Started
 
-CyclonRe-WGS软件推荐使用conda安装。
+## 2.1 Installation
 
-```Shel
-conda env create -f CyclonRe-WGS_environment.yml
+The CyclonRe-WGS software is recommended to be installed using conda.
+
 ```
+unzip CyclonRe_WGS_V1.0.1.zip
+cd CyclonRe_WGS_V1.0.1
+conda env create -f CyclonRe_WGS_environment.yml
+```
+**requirement**
 
-<h3> requirement </h3>
 <table>
     <tr>
         <td>software</td> 
@@ -92,11 +101,125 @@ conda env create -f CyclonRe-WGS_environment.yml
     </tr>
 </table>
 
-<h2>Performance</h2> 
+## 2.2 Preparation
+
+### 2.2.1 Download reference genome
+
+The software supports WGS analysis of 3 reference genomes (hg19/hg38/ecoli), please download the reference genomes in advance.
+
+```
+##download hg38 
+wget https://ftp.ensembl.org/pub/release-111/fasta/homo_sapiens/dna/Homo_sapiens.GRCh38.dna.toplevel.fa.gz
+##download hg19
+wget https://ftp.ensembl.org/pub/grch37/current/fasta/homo_sapiens/dna/Homo_sapiens.GRCh37.dna.toplevel.fa.gz
+```
+
+**Build index for reference genome**
+
+For example:
+
+```
+samtools faidx  Homo_sapiens.GRCh38.dna.toplevel.fa.gz
+gatk CreateSequenceDictionary -R Homo_sapiens.GRCh38.dna.toplevel.fa.gz
+```
+
+### 2.2.2 Download standard baseline
+
+While downloading the vcf.gz file, you need to download the corresponding bed and tbi files. 
+
+**Download HG001 baseline**
+
+```
+##download HG001 small-variants baseline
+wget https://ftp-trace.ncbi.nlm.nih.gov/ReferenceSamples/giab/release/NA12878_HG001/NISTv4.2.1/GRCh37/HG001_GRCh37_1_22_v4.2.1_benchmark.vcf.gz
+wget https://ftp-trace.ncbi.nlm.nih.gov/ReferenceSamples/giab/release/NA12878_HG001/NISTv4.2.1/GRCh38/HG001_GRCh38_1_22_v4.2.1_benchmark.vcf.gz
+
+```
+
+**Download HG002 baseline**
+
+```
+##download HG002 small-variants baseline
+wget https://ftp-trace.ncbi.nlm.nih.gov/ReferenceSamples/giab/release/AshkenazimTrio/HG002_NA24385_son/NISTv4.2.1/GRCh37/HG002_GRCh37_1_22_v4.2.1_benchmark.vcf.gz
+wget https://ftp-trace.ncbi.nlm.nih.gov/ReferenceSamples/giab/release/AshkenazimTrio/HG002_NA24385_son/NISTv4.2.1/GRCh38/HG002_GRCh38_1_22_v4.2.1_benchmark.vcf.gz
+##download HG002 SV baseline
+wget https://ftp-trace.ncbi.nlm.nih.gov/giab/ftp/data/AshkenazimTrio/analysis/NIST_SVs_Integration_v0.6/HG002_SVs_Tier1_v0.6.vcf.gz
+wget https://ftp-trace.ncbi.nlm.nih.gov/giab/ftp/data/AshkenazimTrio/analysis/NIST_HG002_DraftBenchmark_defrabbV0.012-20231107/GRCh38_HG002-T2TQ100-V1.0_stvar.vcf.gz
+```
+
+### 2.2.3 Modify the config file
+
+Replace the software and file paths in the config file with local paths.
+
+```
+vim config
+```
+# 3 RUN
+
+**Usage**
+
+```
+usage: run_cyclone_work -i <fq>  -n <sample_name>  -o <outputFile>
+
+cyclone fq QC workflow
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -i FASTQ, --fastq FASTQ
+                        input fsatq
+  -n SAMPLE_NAME, --sample_name SAMPLE_NAME
+                        sample name
+  -o OUTPUTFILE, --outputFile OUTPUTFILE
+                        output file path,Note that you need to add the "/" symbol at the end of the
+                        folder,eg:'/home/','/home/result/'
+  -callSNP_indel {None,True}, --callsmallVariants {None,True}
+                        The process can autonomously choose whether or not to perform SNP and InDel testing
+                        and evaluation.Choose between None or True.(optional)
+  -t QCTHREAD, --qcthread QCTHREAD
+                        Threads required for the QC program.(optional)
+  -topcrop TOPCROP, --topcrop TOPCROP
+                        Trim n nucleotides from start of read.(optional)
+  -tailcrop TAILCROP, --tailcrop TAILCROP
+                        Trim n nucleotides from end of read.(optional)
+  -q TRIM_QUALITY, --trim_quality TRIM_QUALITY
+                        Filter on a minimum average read quality score.(optional)
+  -qctype {NanoPlot,NanoStat}, --QCtype {NanoPlot,NanoStat}
+                        Select the software used in the QC step. Choose between NanoPlot or
+                        NanoStat.(optional)
+  -standard STANDARDTYPE, --standardtype STANDARDTYPE
+                        Select the standard sample file . Choose between HG002 or HG001.(optional)
+  -ref REF, --REF REF   Select the reference genome used in this analysis. Choose between hg19 or
+                        hg38.(optional)
+  -t2 MAPPINGTHREAD, --mappingthread MAPPINGTHREAD
+                        Threads required for the Mapping program.(optional)
+  -t3 SAMTOOLSTHREAD, --samtoolsthread SAMTOOLSTHREAD
+                        Threads required for the samtools program.(optional)
+  -t4 CALLVARIANTTHREAD, --Callvariantthread CALLVARIANTTHREAD
+                        Threads required for the Clair3 program.(optional)
+
+```
+
+**Example: Use the example data to initiate the analysis.**
+
+- Performs detection of small-variants
+- Data quality requirements Q15
+```
+bin/run_cyclone_workflow 
+-i /test/TB2000B73B-202403261655301_read.cut.fq.gz 
+-n demo_test 
+-o /result/ 
+-callSNP_indel True 
+-standard HG002 
+-ref hg19
+-q 15
+```
+
+# 4 Performance
 
 <h3>Small variant evaluation</h3>
 
-软件对Cyclone下机的HG002数据进行变异检测，将小变异（SNP/InDel）与giab数据库 (https://ftp-trace.ncbi.nlm.nih.gov/ReferenceSamples/giab/) 中的baseline进行比对，得到SNP/InDel评估值。
+The software uses the HG002 Cyclone data  for variant detection, comparing small variants (SNP/InDel) to baseline in the giab database (https://ftp-trace.ncbi.nlm.nih.gov/ReferenceSamples/giab/) to obtain SNP /InDel evaluation values.
+
 <h4>SNPs evaluation</h4>
 <table>
     <tr>
@@ -192,4 +315,3 @@ conda env create -f CyclonRe-WGS_environment.yml
         <td>0.9237</td>
    </tr>
 </table>
-
