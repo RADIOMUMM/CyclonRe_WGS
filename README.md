@@ -7,7 +7,7 @@ CyclonRe-WGS software is dedicated to MGI-cyclone/ONT triple sequencing technolo
 
 ## 1.1 Software Workflow
 
-![Uploading software_workflow1.png…]()
+<div align=center><img src="https://pic.imgdb.cn/item/669f5055d9c307b7e9bac487.png" alt="图片alt" title="图2" width="50%"></div>
 
 
 
